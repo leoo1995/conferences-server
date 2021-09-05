@@ -66,7 +66,9 @@ const loginUser = async (req, res = response) => {
       name: user.name,
       token,
     })
-  } catch (error) {}
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 const revalidateToken = async (req, res = response) => {
