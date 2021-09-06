@@ -42,11 +42,11 @@ const updateConference = async (req, res = response) => {
         ok: false,
         msg: "The conference was not found",
       })
-    if (conference.user.toString() !== uid)
-      return res.status(401).json({
-        ok: false,
-        msg: "You don't have privileges to modify this conference",
-      })
+    // if (conference.user.toString() !== uid)
+    //   return res.status(401).json({
+    //     ok: false,
+    //     msg: "You don't have privileges to modify this conference",
+    //   })
     const availableQuota = quota - attendees.length
     const full = quota === attendees.length
     const newConference = {
