@@ -21,31 +21,31 @@ const EventSchema = Schema({
     ref: "User",
     required: true,
   },
-  name: {
-    type: String,
-    // required: true,
-  },
-  date: {
-    type: Date,
-    // required: true,
-  },
-  location: {
-    type: String,
-    // required: true,
-  },
-  quota: {
-    type: Number,
-    // required: true,
-  },
-  attendees: {
-    type: Array,
-  },
-  availableQuota: {
-    type: Number,
-  },
-  full: {
-    type: Boolean,
-  },
+  // name: {
+  //   type: String,
+  //   // required: true,
+  // },
+  // date: {
+  //   type: Date,
+  //   // required: true,
+  // },
+  // location: {
+  //   type: String,
+  //   // required: true,
+  // },
+  // quota: {
+  //   type: Number,
+  //   // required: true,
+  // },
+  // attendees: {
+  //   type: Array,
+  // },
+  // availableQuota: {
+  //   type: Number,
+  // },
+  // full: {
+  //   type: Boolean,
+  // },
 })
 
 EventSchema.method("toJSON", function () {
