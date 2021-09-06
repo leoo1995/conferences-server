@@ -39,6 +39,7 @@ const createUser = async (req, res = response) => {
 }
 
 const loginUser = async (req, res = response) => {
+  console.log(req.body)
   const { email, password } = req.body
 
   try {
@@ -78,6 +79,8 @@ const revalidateToken = async (req, res = response) => {
   res.json({
     ok: true,
     msg: "renew",
+    uid,
+    name,
     token,
   })
 }
