@@ -55,14 +55,18 @@ const updateConference = async (req, res = response) => {
       availableQuota,
       full,
     }
-    const conferenceUpdated = await Conference.findByIdAndUpdate(
-      conferenceId,
-      newConference,
-      {
-        new: false,
-      },
+    // const conferenceUpdated = await Conference.findByIdAndUpdate(
+    //   conferenceId,
+    //   newConference,
+    //   {
+    //     new: false,
+    //   },
+    // )
+    const conferenceUpdated = await Conference.findOneAndUpdate(
+      { id: conferenceId },
+      { ...newConference },
+      { new: true },
     )
-
     return res.json({
       ok: true,
       conferenceUpdated,
