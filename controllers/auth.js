@@ -3,6 +3,19 @@ const bcrypt = require("bcryptjs")
 const User = require("../models/User")
 const { generateJWT } = require("../helpers/jwt")
 
+const getUsers = async (req, res = response) => {
+  try {
+    const users = await User.find()
+    res.json({
+      ok: true,
+      users,
+      msg: "getUsers",
+    })
+  } catch (e) {
+    console.error(e)
+  }
+}
+
 const createUser = async (req, res = response) => {
   const { email, password } = req.body
   try {
@@ -90,4 +103,5 @@ module.exports = {
   createUser,
   loginUser,
   revalidateToken,
+  getUsers,
 }

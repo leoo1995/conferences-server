@@ -11,7 +11,10 @@ const {
   createUser,
   loginUser,
   revalidateToken,
+  getUsers,
 } = require("../controllers/auth")
+
+router.get("/", getUsers)
 
 router.post(
   "/new",
