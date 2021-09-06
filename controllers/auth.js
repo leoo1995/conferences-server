@@ -74,12 +74,13 @@ const loginUser = async (req, res = response) => {
 }
 
 const revalidateToken = async (req, res = response) => {
-  const { uid, name } = req
+  const { uid, name, role } = req
   // generate token
-  const token = await generateJWT(uid, name)
+  const token = await generateJWT(uid, name, role)
   res.json({
     ok: true,
     msg: "renew",
+    role,
     uid,
     name,
     token,
