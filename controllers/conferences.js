@@ -58,6 +58,9 @@ const updateConference = async (req, res = response) => {
     const conferenceUpdated = await Conference.findByIdAndUpdate(
       conferenceId,
       newConference,
+      {
+        new: false,
+      },
     )
 
     return res.json({
