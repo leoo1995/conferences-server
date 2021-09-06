@@ -52,21 +52,20 @@ const updateConference = async (req, res = response) => {
     const newConference = {
       ...req.body,
       user: uid,
-      availableQuota,
-      full,
+      // availableQuota,
+      // full,
     }
-    // const conferenceUpdated = await Conference.findByIdAndUpdate(
-    //   conferenceId,
-    //   newConference,
-    //   {
-    //     new: false,
-    //   },
-    // )
-    const conferenceUpdated = await Conference.findOneAndUpdate(
-      { id: conferenceId },
-      { ...newConference },
-      { new: true },
+    const options = { new: true }
+    const conferenceUpdated = await Conference.findByIdAndUpdate(
+      conferenceId,
+      newConference,
+      options,
     )
+    // const conferenceUpdated = await Conference.findOneAndUpdate(
+    //   { id: conferenceId },
+    //   { ...newConference },
+    //   { new: true },
+    // )
     return res.json({
       ok: true,
       conferenceUpdated,
