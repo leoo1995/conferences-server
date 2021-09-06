@@ -51,7 +51,7 @@ const updateConference = async (req, res = response) => {
     const full = quota === attendees.length
     const newConference = {
       ...req.body,
-      user: uid,
+      // user: uid,
       // availableQuota,
       // full,
     }
