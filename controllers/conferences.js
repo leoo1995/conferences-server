@@ -63,7 +63,7 @@ const updateConference = async (req, res = response) => {
       },
     )
 
-    res.json({
+    return res.json({
       ok: true,
       conferenceUpdated,
     })
